@@ -1,0 +1,12 @@
+<ion-view title="Stores">
+  <ion-content class="padding">
+        <ion-list>
+            <ion-item ng-repeat="x in results" href="{{x.mobile_url}}" target='_blank'>
+                {{ x.name }} 
+                <span class="item-note">
+                    {{x.distance }} miles
+                </span>
+            </ion-item>
+        </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view title="Artists">
+  <ion-content class="padding">
+  <!--<h1>Artists</h1>-->
+    <ion-list>
+        <ion-item ng-repeat="x in results">
+            {{ x.username +' ('+ x.favorite_music +')'}}
+            <span class="item-note">
+                {{x.distance }} miles
+            </span>
+            </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,73 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">Sign Up</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeSignup()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSignup()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="signUpData.username" name="username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="signUpData.password" name="password">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Confirm Password</span>
+          <input type="password" ng-model="signUpData.comfirmPassword" name="comfirmPassword">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="signUpData.email" name="email">
+         
+        </label>
+
+        <label class="item item-select item-input" >
+          <span class="input-label">I am a</span>
+
+          
+            <select ng-model="signUpData.identity" ng-controller="UserInfo" name="identity">
+              <option ng-repeat="role in roles" value="{{role}}">{{role}}</option>
+            </select>
+            
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Full Name</span>
+          <input type="text" ng-model="signUpData.fullname" name="fullname">
+        </label>
+
+        <label class="item item-select">
+        
+          <span class="input-label">Gender</span>
+
+            <select ng-model="signUpData.gender" ng-controller="UserInfo" name="gender">
+              <option ng-repeat="gender in genders" value="{{gender}}">{{gender}}</option>
+            </select>
+        </label>
+        
+        <label class="item item-select">
+          <span class="input-label">Favorite Music</span>
+
+            <select ng-model="signUpData.music" ng-controller="UserInfo" name="music">
+              <option ng-repeat="music in musics" value="{{music}}">{{music}}</option>
+            </select>  
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Zipcode</span>
+          <input type="text" ng-model="signUpData.zipcode" name="zipcode">
+        </label>
+
+        <span class="error" style="color:red">{{formError}}</span>
+        <span class="error" style="color:red">{{serverError}}</span>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Sign Up</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</div>
